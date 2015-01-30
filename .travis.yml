@@ -1,8 +1,10 @@
-language: python
-python:
-  - "3.4"
-install:
-  - sudo pip install sphinx
-  - sudo pip install sphinx_rtd_theme
+language: scala
+before_script:
+  - pip install sphinx
+  - pip install sphinx_rtd_theme
 script:
-  - sphinx-build -b html src/sphinx test
+  - sbt ++$TRAVIS_SCALA_VERSION package-site
+scala:
+  - 2.11.4
+jdk:
+  - oraclejdk7    
