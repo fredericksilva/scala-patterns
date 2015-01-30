@@ -1,6 +1,9 @@
 language: scala
+before_script:
+  - sudo apt-get update -qq
+  - sudo apt-get install -y python-sphinx
 script:
-        - sbt ++$TRAVIS_SCALA_VERSION package-site
+  - sbt ++$TRAVIS_SCALA_VERSION package-site
 scala:
   - 2.11.4
 jdk:
