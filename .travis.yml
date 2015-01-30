@@ -1,7 +1,7 @@
 language: scala
 before_script:
-  - pip install sphinx
-  - pip install sphinx_rtd_theme
+  - sudo pip install sphinx
+  - sudo pip install sphinx_rtd_theme
 script:
   - sbt ++$TRAVIS_SCALA_VERSION package-site
 scala:
