@@ -3,7 +3,7 @@ before_script:
   - sudo apt-get update -qq
   - sudo apt-get install -y python-sphinx
 script:
-  - sbt ++$TRAVIS_SCALA_VERSION package-site
+  - sphinx-build -b html src/sphinx test
 scala:
   - 2.11.4
 jdk:
