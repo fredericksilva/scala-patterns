@@ -36,7 +36,6 @@ extensions = [
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
-    'sphinxcontrib.httpdomain',
     'edit_on_github'
 ]
 
