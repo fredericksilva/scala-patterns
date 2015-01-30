@@ -1,0 +1,7 @@
+language: scala
+script:
+  - sbt ++$TRAVIS_SCALA_VERSION compile
+scala:
+  - 2.11.4
+jdk:
+  - oraclejdk7
