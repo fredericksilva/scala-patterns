@@ -1,4 +1,15 @@
-Scala akka patterns
-========================
+.. Scala patterns documentation master file, created by
+   sphinx-quickstart on Mon Feb  2 20:17:42 2015.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
 
-This site contains the patterns and practices for scala and akka
+Welcome to Scala patterns's documentation!
+==========================================
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+ 
+   *

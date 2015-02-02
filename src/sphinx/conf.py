@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# ReBB Ansible Roles documentation build configuration file, created by
-# sphinx-quickstart on Wed May 14 11:56:17 2014.
+# Scala patterns documentation build configuration file, created by
+# sphinx-quickstart on Mon Feb  2 20:17:42 2015.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -14,9 +14,7 @@
 
 import sys
 import os
-import sphinx_rtd_theme
-
-sys.path.insert(0, os.path.abspath('_ext'))
+import sphinx_bootstrap_theme
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -36,11 +34,7 @@ extensions = [
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
-    'edit_on_github'
 ]
-
-edit_on_github_project = 'wehkamp/rebb-site'
-edit_on_github_branch = 'master'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -55,8 +49,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'ReBB Website'
-copyright = u'2014, labs.wehkamp.com'
+project = u'Scala patterns'
+copyright = u'2015, J. Toebes'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -79,7 +73,7 @@ release = '0.1'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = []
+exclude_patterns = ['_build']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -110,15 +104,17 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'bootstrap'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#html_theme_options = {}
+html_theme_options = {
+  'bootswatch_theme': "flatly", 
+}
 
 # Add any paths that contain custom themes here, relative to this directory.
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -139,7 +135,7 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-# html_static_path = ['_static']
+html_static_path = ['_static']
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
@@ -188,7 +184,7 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'ReBBWebsiteDocs'
+htmlhelp_basename = 'Scalapatternsdoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -208,8 +204,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'ReBBWebsite.tex', u'ReBB Website Documentation',
-   u'labs.wehkamp.com', 'manual'),
+  ('index', 'Scalapatterns.tex', u'Scala patterns Documentation',
+   u'J. Toebes', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -238,8 +234,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'rebbwebsite', u'ReBB Website Documentation',
-     [u'labs.wehkamp.com'], 1)
+    ('index', 'scalapatterns', u'Scala patterns Documentation',
+     [u'J. Toebes'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -252,8 +248,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'ReBBWebsite', u'ReBB Website Documentation',
-   u'labs.wehkamp.com', 'ReBBWebsite', 'The wehkamp website.',
+  ('index', 'Scalapatterns', u'Scala patterns Documentation',
+   u'J. Toebes', 'Scalapatterns', 'One line description of project.',
    'Miscellaneous'),
 ]
 
