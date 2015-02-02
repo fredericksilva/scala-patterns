@@ -1,10 +1,17 @@
 language: scala
 before_script:
-  - sudo pip install sphinx
-  - sudo pip install sphinx_rtd_theme
+- sudo pip install sphinx
+- sudo pip install sphinx_rtd_theme
 script:
-  - sbt ++$TRAVIS_SCALA_VERSION package-site
+- sbt ++$TRAVIS_SCALA_VERSION package-site
+after_success: bundle exec travis-custom-deploy ftp target/site/
 scala:
-  - 2.11.4
+- 2.11.4
 jdk:
-  - oraclejdk7    
+- oraclejdk7
+env:
+  global:
+  - secure: YHIKjxSgae1+pEIdjNPZLqhrcz5+0LIV9PKqFEc5WU+gmaxCpZ6WH+z90zUAzVvWP9D8geqOiPtiDsS3Ht6CbqkJwm9Daz6Bs+sINDM2KAGWjznmTKWK6yoB8Gkkk7LazsZhKVmUak5p8aOYCQCZHOp0q3u9HYvee7dCmIctZ5U=
+  - secure: dWU3dpiLntcQTw/hBWGvGsutX5cNhrUNwM05ZSOaG6ZzIwZO4V2lzZgkanolbjb23C+MXP9XLVcka01gxBqLjtx3PBr5ZGMDPWHdkKVNrnAe6dBdt2Hf0mrazdRVpcgVynlkcAgRl3tZ6L7HHQnXIKEtnJTrY0KWTzhyZ9+CaEg=
+  - secure: iA4r6tX8fu+/4X+0BuLt6XV4qpzoVpmg3X7LiUM0+ow0czWXtoNzZsZFmJml5wNkw2VSiISZrSV6DT2jbOj9i68pqyzfnFf42hCIqnr/RzXEQMICf/j6p0G/SAAHCmqxrndYYnGx3mDVOSS97bhXcOlBDP7GQzwJYC6ByX/2XmE=
+  - secure: QMOU8i11FPLYPgmRxKlQX7coDwTrDEiy7mUNWrxPiSitRhFxtuVRnoGtFW6ZNlHG+SwV1SS0TBc8bx1A8B6Q9gWv1LzUdN24WaGzEOiwYv5iLHvJy4g7UC2kZhy17oTBeiL+MEaM/dAuKqJkSgvtZDRh6nT8jnWC3GnHdPSlKus=
