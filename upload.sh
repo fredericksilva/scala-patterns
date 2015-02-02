@@ -1,4 +1,1 @@
-lftp -u $FTP_USER,$FTP_PASSWORD s195.webhostingserver.nl <<EOF
-cd public_html
-glob -a rm -r *
-EOF
+lftp -e "mirror -R target/site public_html" -u $FTP_USER,$FTP_PASSWORD s195.webhostingserver.nl
