@@ -6,7 +6,7 @@ script:
 - sbt ++$TRAVIS_SCALA_VERSION package-site
 after_success: 
 - bundle install
-- bundle exec travis-custom-deploy ftp target/site/
+- bundle exec travis-custom-deploy FTP target/site/
 scala:
 - 2.11.4
 jdk:
