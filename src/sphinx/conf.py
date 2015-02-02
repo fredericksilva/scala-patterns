@@ -39,7 +39,7 @@ extensions = [
     'edit_on_github'
 ]
 
-edit_on_github_project = 'wehkamp/rebb-site'
+edit_on_github_project = 'xebia/scala-patterns'
 edit_on_github_branch = 'master'
 
 # Add any paths that contain templates here, relative to this directory.
@@ -55,8 +55,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'ReBB Website'
-copyright = u'2014, labs.wehkamp.com'
+project = u'Scala patterns'
+copyright = u'2015, xebia.com'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -188,7 +188,7 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'ReBBWebsiteDocs'
+htmlhelp_basename = 'ScalaPatternsDocs'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -208,8 +208,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'ReBBWebsite.tex', u'ReBB Website Documentation',
-   u'labs.wehkamp.com', 'manual'),
+  ('index', 'ScalaPatterns.tex', u'Scala Patterns Documentation',
+   u'xebia.com', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -238,8 +238,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'rebbwebsite', u'ReBB Website Documentation',
-     [u'labs.wehkamp.com'], 1)
+    ('index', 'scalapatterns', u'ReBB Scala Patterns',
+     [u'xebia.com'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -252,8 +252,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'ReBBWebsite', u'ReBB Website Documentation',
-   u'labs.wehkamp.com', 'ReBBWebsite', 'The wehkamp website.',
+  ('index', 'ScalaPatterns', u'Scala Patterns Documentation',
+   u'xebia.com', 'ScalaPatterns', 'The scala patterns website.',
    'Miscellaneous'),
 ]
 
