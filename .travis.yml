@@ -4,16 +4,14 @@ before_script:
 - sudo pip install sphinx_rtd_theme
 script:
 - sbt ++$TRAVIS_SCALA_VERSION package-site
-after_success: 
-- bundle install
-- bundle exec travis-custom-deploy FTP target/site/
+after_success:
+- brew install lftp
+- "./upload.sh"
 scala:
 - 2.11.4
 jdk:
 - oraclejdk7
 env:
   global:
-  - secure: YHIKjxSgae1+pEIdjNPZLqhrcz5+0LIV9PKqFEc5WU+gmaxCpZ6WH+z90zUAzVvWP9D8geqOiPtiDsS3Ht6CbqkJwm9Daz6Bs+sINDM2KAGWjznmTKWK6yoB8Gkkk7LazsZhKVmUak5p8aOYCQCZHOp0q3u9HYvee7dCmIctZ5U=
-  - secure: dWU3dpiLntcQTw/hBWGvGsutX5cNhrUNwM05ZSOaG6ZzIwZO4V2lzZgkanolbjb23C+MXP9XLVcka01gxBqLjtx3PBr5ZGMDPWHdkKVNrnAe6dBdt2Hf0mrazdRVpcgVynlkcAgRl3tZ6L7HHQnXIKEtnJTrY0KWTzhyZ9+CaEg=
-  - secure: iA4r6tX8fu+/4X+0BuLt6XV4qpzoVpmg3X7LiUM0+ow0czWXtoNzZsZFmJml5wNkw2VSiISZrSV6DT2jbOj9i68pqyzfnFf42hCIqnr/RzXEQMICf/j6p0G/SAAHCmqxrndYYnGx3mDVOSS97bhXcOlBDP7GQzwJYC6ByX/2XmE=
-  - secure: QMOU8i11FPLYPgmRxKlQX7coDwTrDEiy7mUNWrxPiSitRhFxtuVRnoGtFW6ZNlHG+SwV1SS0TBc8bx1A8B6Q9gWv1LzUdN24WaGzEOiwYv5iLHvJy4g7UC2kZhy17oTBeiL+MEaM/dAuKqJkSgvtZDRh6nT8jnWC3GnHdPSlKus=
+  - secure: N0ZRg3GI9ihNNh1hac/3RTKc9Ewmc5WeSLARndPtChuGfC2XeVhYQgqdv13pQswbrPMjeHCxtv0JdzNGCTsqY3Jp9M7ZvlnMlz4FjThNu2ngWHOiEc8rETr+deVAjKDK8K1oNYSkVqyoAQP52flw0irHSmHEHiIPKBOioVlReiY=
+  - secure: fNjOmPpWfHvIPucyGUqkBHg/VyKvQC1XkT9XCLUcE9pwKSvYXxDDEZEE1hhEKnOD0ulOCAzCAcr9ailH3+ZLtS0PYUUAynPfaE41hRlmlxalo4QUy5epzTKKC/eaq8jcm1DTr2BeCWqAQ9OvD9cqWiJ2x/5LmlOPCIIQPXIv8aQ=
