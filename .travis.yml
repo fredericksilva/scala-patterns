@@ -5,7 +5,8 @@ before_script:
 script:
 - sbt ++$TRAVIS_SCALA_VERSION package-site
 after_success:
-- brew install lftp
+- sudo apt-get update
+- sudo apt-get install lftp
 - ./upload.sh
 scala:
 - 2.11.4
