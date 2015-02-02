@@ -4,7 +4,9 @@ before_script:
 - sudo pip install sphinx_rtd_theme
 script:
 - sbt ++$TRAVIS_SCALA_VERSION package-site
-after_success: bundle exec travis-custom-deploy ftp target/site/
+after_success: 
+- bundle install
+- bundle exec travis-custom-deploy ftp target/site/
 scala:
 - 2.11.4
 jdk:
