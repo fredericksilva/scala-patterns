@@ -7,7 +7,7 @@ script:
 after_success:
 - sudo apt-get update
 - sudo apt-get install lftp
-- ./upload.sh
+- ./scripts/upload.sh
 scala:
 - 2.11.4
 jdk:
