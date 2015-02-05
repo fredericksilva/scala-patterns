@@ -3,6 +3,7 @@ before_script:
 - sudo pip install sphinx
 - sudo pip install sphinx_rtd_theme
 script:
+- sbt ++$TRAVIS_SCALA_VERSION compile
 - sbt ++$TRAVIS_SCALA_VERSION package-site
 after_success:
 - sudo apt-get update
