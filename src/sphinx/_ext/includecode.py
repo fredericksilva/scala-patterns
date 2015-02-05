@@ -11,6 +11,8 @@ class IncludeCode(Directive):
     Include a code example from a file with sections delimited with special comments.
     """
 
+    print 'JAAAA';
+
     has_content = False
     required_arguments = 1
     optional_arguments = 0
