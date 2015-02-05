@@ -5,7 +5,7 @@ This site contains the patterns and practices for scala and akka
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 0
    :glob:
       
    *
