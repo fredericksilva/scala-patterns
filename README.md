@@ -11,6 +11,8 @@ Project that contains scala-related patterns and practices. So patterns & practi
 
 # How to contribute a pattern
 * Find a good, descriptive name that covers it.
+* Do you have a pattern? Please provide a related code-smell.
+* Do you have an anti-pattern? Please provide also a solution what the desired result should be.
 * Every pattern or practice should get a seperate .rst file and a scala file. Rename these files to your patternname.
 * Don't create subfolders. For now, we don't structure the patterns. First we want to build a library and then we'll have a good feeling how to structure them.
 * When you've created a code example, please take your time and ask yourself? Can it be more simple with less code?
