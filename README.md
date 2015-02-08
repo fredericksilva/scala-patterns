@@ -31,3 +31,4 @@ There are several ways to include code
 * Only a _method_ signature by naming the def/val the name of the snippet `def snippet_name(..) = {}`
 
 Note that one can refer multiple times to a snippet in a code file. These code_lines will be merged
+One can hide a line with the comment `// hide ...`
