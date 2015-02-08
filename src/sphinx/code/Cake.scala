@@ -6,17 +6,20 @@ import Utils._
 class Cake extends Specification {
   class Bean
 
-  "smell" in compileOnly {
-    class DarkBeanProvider
+  //#smell
+  class DarkBeanProvider
 
-    class EspressoMachine(userRepository: DarkBeanProvider) {
-      def makeCoffee = ???
-    }
-
-    val coffeeMaker = new EspressoMachine(new DarkBeanProvider)
-
-    coffeeMaker.makeCoffee
+  //hide this text
+  class EspressoMachine(userRepository: DarkBeanProvider) {
+    def makeCoffee = ???
   }
+
+  val coffeeMaker = new EspressoMachine(new DarkBeanProvider)
+  //#
+
+  //# smell
+  class xyz
+  //#
 
   "solution" in compileOnly {
     object EspressoMachine extends CoffeeMaker

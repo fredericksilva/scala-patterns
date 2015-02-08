@@ -58,26 +58,36 @@ class IncludeCode(Directive):
                 (encoding, fn))]
 
         snippet = self.options.get('snippet')
+        # as long as current_snippets is filled, it will process lines
         current_snippets = ""
         res = []
         for line in lines:
+            # splits on second part after comment
             comment = line.rstrip().split("//", 1)[1] if line.find("//") >= 0 else ""
+            # scenario 1: if comment and start with # than match
             if comment.startswith("#") and len(comment) > 1:
                 current_snippets = comment
                 indent = line.find("//")
+            # scenario 2: no comment, but starts with " -> so spec
             elif len(line) > 2 and line[2] == '"' and not current_snippets.startswith("#"):
                 current_snippets = line[2:]
                 indent = 4
+            # scenario 1: if line //# than closing the snippet
             elif comment == "#" and current_snippets.startswith("#"):
                 current_snippets = ""
+            # scenario 2: if line ends } than closing the snippet                
             elif len(line) > 2 and line[2] == '}' and not current_snippets.startswith("#"):
                 current_snippets = ""
+            # adds line if its not a comment with 'hide' syntax
             elif current_snippets.find(snippet) >= 0 and comment.find("hide") == -1:
                 res.append(line[indent:].rstrip() + '\n')
+            # lines with 'val x: Int = 0 // snippet' will be added
             elif comment.find(snippet) >= 0:
                 array = line.split("//", 1)
+
                 l = array[0].rstrip() if array[1].startswith("/") > 0 else array[0].strip()
                 res.append(l + '\n')
+            # matches only on def val line, imo very useless. one can only add a method signature
             elif re.search("(def|val) "+re.escape(snippet)+"(?=[:(\[])", line):
                 # match signature line from `def <snippet>` but without trailing `=`
                 start = line.find("def")
