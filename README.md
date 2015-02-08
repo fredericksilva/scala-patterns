@@ -22,3 +22,12 @@ Project that contains scala-related patterns and practices. So patterns & practi
 # Last but not least
 * You can link in your .RST to parts in the codebase
 * Every commit on master will result in a new deploy on www.scalapatterns.io
+
+# Includecode
+There are several ways to include code
+* Include code block `//# snippet_name` and end the block with `//#`
+* Add a specification with signature `"snippet_name" in compileOnly { ... } `
+* Cherry pick some lines for a snippet with `... code ... // snippet_name
+* Only a _method_ signature by naming the def/val the name of the snippet `def snippet_name(..) = {}`
+
+Note that one can refer multiple times to a snippet in a code file. These code_lines will be merged
