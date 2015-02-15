@@ -19,11 +19,12 @@ object Build extends Build {
 
   lazy val root = Project("sa-pattern", file("."))
     .settings(basicSettings: _*)
+    .settings(dependencySettings: _*)
     .settings(compileSettings: _*)
     .settings(formattingSettings: _*)
     .settings(site.settings: _*)
     .settings(site.sphinxSupport(): _*)
-    .settings(libraryDependencies ++= specs2)
+    .settings(libraryDependencies ++= Seq(specs2, akkaActor))
               
   val basicScalacOptions = Seq(
     "-encoding", "utf8",
