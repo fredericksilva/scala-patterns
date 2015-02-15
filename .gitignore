@@ -18,3 +18,4 @@ project/plugins/project/
 
 *.sublime*
 *.pyc
+sublime.sbt
