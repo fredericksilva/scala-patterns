@@ -24,7 +24,7 @@ object Build extends Build {
     .settings(formattingSettings: _*)
     .settings(site.settings: _*)
     .settings(site.sphinxSupport(): _*)
-    .settings(libraryDependencies ++= Seq(specs2, akkaActor))
+    .settings(libraryDependencies ++= Seq(specs2, akkaActor, akkaTestkit, scalatest))
               
   val basicScalacOptions = Seq(
     "-encoding", "utf8",

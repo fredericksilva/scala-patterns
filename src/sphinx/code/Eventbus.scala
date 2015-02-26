@@ -24,9 +24,13 @@ class EventBusForActors[EventType, ClassifierType](
     subscriber ! event
   }
 }
+
+object GenericPublisher {
+  case class RegisterListener(actor: ActorRef)
+  case class UnregisterListener(actor: ActorRef)
+}
 //#
 object PostOffice {
-  case class RegisterListener(actor: ActorRef)
   //# setup
   class PostNotification
   case object LetterNotification extends PostNotification
@@ -37,6 +41,7 @@ object PostOffice {
 //# postofficea
 class PostOfficeA extends Actor {
   import PostOffice._
+  import GenericPublisher._
 
   val bus = new EventBusForActors()
 
@@ -51,6 +56,7 @@ class PostOfficeA extends Actor {
 //# postofficeb
 class PostOfficeB extends Actor {
   import PostOffice._
+  import GenericPublisher._
 
   val bus = new EventBusForActors[PostNotification, Boolean]({
     notification: PostNotification ⇒
